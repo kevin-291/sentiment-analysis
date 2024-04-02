@@ -1,11 +1,11 @@
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from scipy.special import softmax
 import streamlit as st
 
 
 MODEL = f"cardiffnlp/twitter-roberta-base-sentiment"
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+model = TFAutoModelForSequenceClassification.from_pretrained(MODEL)
 
 def analyse_sentiment(text):
     encoded_text = tokenizer(text, return_tensors = 'pt')
