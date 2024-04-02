@@ -1,6 +1,7 @@
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from scipy.special import softmax
 import streamlit as st
+import tensorflow as tf
 
 
 MODEL = f"cardiffnlp/twitter-roberta-base-sentiment"
